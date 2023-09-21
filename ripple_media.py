@@ -1,4 +1,5 @@
 
+
 def box_office_data():
     # NOTE: `movies_str` is a string
     movies_str = "House on Haunted Hill,Cruel Intentions,10 Things I Hate About You,My Favorite Martian,8MM,\
@@ -22,6 +23,30 @@ def box_office_data():
         'Message in a Bottle', "You've Got Mail", 'South Park: Bigger, Longer & Uncut', 'Stigmata',
         'Life Is Beautiful', 'The Prince of Egypt','Deuce Bigalow: Male Gigolo',
     ]
+
+    remaining_50_list = movies_str.split(",")
+    print(type(remaining_50_list))
+    print(len(remaining_50_list))
+    
+    remaining_50_list.remove('The Matrix')
+    print('The Matrix' in remaining_50_list)
+      
+    remaining_50_list.append('Anywhere But Here')
+    print('Anywhere But Here' in remaining_50_list)
+    remaining_50_list[-1]
+
+    print(len(remaining_50_list))
+
+    # The top 50 titles should be the first list when you combine them
+    top_100 = top_50_list + remaining_50_list
+    print(len(top_100))
+
+    print(top_100[0])
+
+    print(top_100[0:10])
+    
+
+#box_office_data()
 
     # 1.1 TODO: Convert the string `movies_str` into a list and assign it to a variable called `remaining_50_list`
     # NOTE: make sure that the commas that separate the titles in the string don't stay in the titles in the list!
@@ -61,6 +86,20 @@ def create_employee_email_address():
     # Let's write some code that converts a name into an email id that matches this format
 
     employee_name = 'Daffy Duck'
+
+    lower_name = employee_name.lower()
+    print(lower_name)
+
+    names_list = lower_name.split(" ")
+    print(names_list)
+
+    joined_names = ".".join(names_list)
+    print(joined_names)
+
+    email = (f"{joined_names}@ripplemedia.com")
+    print(email)
+
+# create_employee_email_address()
 
     # 2.1 TODO: Let's save the lowercase version of the employee_name in a new variable 'lower_name'
     # (use a string method to lower the name). Print out the variable.
